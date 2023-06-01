@@ -4,6 +4,76 @@ if (document.readyState == 'loading') {
     mainFunction();
   }
   
+  // Exercise #1
+  // Step 1
+  const changeColorButton = document.getElementById("change-text-color");
+  // Step 2
+  changeColorButton.addEventListener("click", function() {
+    //Step 3
+      changeColorButton.style.color = "black";
+  })
+
+  // Exercise #2
+  // Step 1
+  const changeTextButton = document.getElementById("change-text-color");
+  // Step 2
+  changeTextButton.addEventListener("click", function() {
+    //Step 3
+    changeTextButton.innerHTML="Hello World";
+  })
+  
+  //Exercise #3
+  //Step 1
+  const subscribeButton = document.getElementById("subscribe-button");
+  //Step2
+  subscribeButton.addEventListener("click", function() {
+    //Step3
+    alert("Thank you for subscribing");
+  })
+
+  //Exercise#4
+  const cardButtons = document.getElementsByClassName("card-btn");
+  for (var i=0; i< cardButtons.length; i++) {
+    cardButtons[i].addEventListener("click", hideButton);
+  }
+  function hideButton() {
+    this.style.visibility="hidden";
+  }
+
+  //Exercise#5
+  const userInput = document.querySelector(".input-field");
+  userInput.addEventListener("keyup", function() {
+    if (userInput.value.includes("h")){
+      alert(userInput.value);
+    }
+  })
+
+  //Exercise #6
+  var newsletterHeader = document.querySelector(".newsletter-header");
+  newsletterHeader.addEventListener("mouseover", function() {
+    newsletterHeader.style.color ="red";
+  });
+
+  newsletterHeader.addEventListener("mouseout", function() {
+    newsletterHeader.style.color ="white";
+  });
+
+  // Exercise #7
+  var addDiv = document.getElementById("add-element");
+  var parentDiv = document.getElementById("add-element-section");
+  addDiv.addEventListener("click", function(){
+    //Creates a new div element
+    var newDiv = document.createElement("div");
+    //Creates a new p element
+    var newPargraph = document.createElement("p");
+    newPargraph.textContent = "Some text";
+    //append the paragraph to the new div
+    newDiv.appendChild(newPargraph);
+    //append the new div to the parent div container
+    parentDiv.appendChild(newDiv);
+  });
+
+
   function mainFunction() {
     // *************************************************************************
     //  Exercise #1
